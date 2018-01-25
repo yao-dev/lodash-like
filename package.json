@@ -1,0 +1,17 @@
+{
+  "name": "LodashLike",
+  "version": "1.0.0",
+  "description": "Homemade Lodash library",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "keywords": [],
+  "author": "Michaël Yao",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "jest": "^21.2.1"
+  }
+}
