@@ -11,6 +11,7 @@ Returns
 
 export default (array, size = 1) => {
   if (!array.length || size <= 0) return [];
+  if (array.length <= size) return array;
   if (size == 1) {
     return array.map(item => [item]);
   }
