@@ -15,4 +15,14 @@ export default (array, size = 1) => {
   if (size == 1) {
     return array.map(item => [item]);
   }
+  const iterationNumber = array.length / size;
+  let start = 0;
+  let end = size;
+
+  return Array.from(Array(iterationNumber), (a,b,c) => {
+    const group = array.slice(start, end);
+    start += size;
+    end += size;
+    return group;
+  });
 };
