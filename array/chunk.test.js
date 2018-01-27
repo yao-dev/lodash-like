@@ -1,6 +1,11 @@
 import chunk from './chunk';
 
 describe('chunk', () => {
+  it('should return empty array if array provide is not an array or empty string', () => {
+    expect(chunk(1)).toEqual([]);
+    expect(chunk("")).toEqual([]);
+    expect(chunk({})).toEqual([]);
+  });
   it('should return empty array if array is empty', () => {
     expect(chunk([], 2)).toEqual([]);
   });
