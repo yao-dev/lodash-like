@@ -10,7 +10,7 @@ Returns
 **/
 
 export default (array, size = 1) => {
-  if (size == 0) return [];
+  if (!array.length || size == 0) return [];
   if (size == 1) {
     return array.map(item => [item]);
   }
