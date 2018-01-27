@@ -1,5 +1,5 @@
 {
-  "name": "LodashLike",
+  "name": "lodash-like",
   "version": "1.0.0",
   "description": "Homemade Lodash library",
   "main": "index.js",
