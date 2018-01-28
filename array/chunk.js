@@ -8,21 +8,25 @@ array (Array): The array to process.
 Returns
 (Array): Returns the new array of chunks.
 **/
-
 export default (array, size = 1) => {
-  if (!array.length || size <= 0) return [];
-  if (array.length <= size) return array;
-  if (size == 1) {
+  const sizeFloor = Math.floor(size);
+
+  if (!array.length || sizeFloor <= 0) return [];
+  if (array.length <= sizeFloor) return array;
+  if (sizeFloor == 1) {
     return array.map(item => [item]);
   }
-  const iterationNumber = array.length / size;
-  let start = 0;
-  let end = size;
 
-  return Array.from(Array(iterationNumber), (a,b,c) => {
+  const iterationNumber = Math.round(array.length / sizeFloor);
+  let start = 0;
+  let end = sizeFloor;
+
+  return Array.from(Array(iterationNumber), () => {
     const group = array.slice(start, end);
-    start += size;
-    end += size;
+
+    start += sizeFloor;
+    end += sizeFloor;
+
     return group;
   });
 };

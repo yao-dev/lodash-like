@@ -29,4 +29,9 @@ describe('chunk', () => {
     expect(chunk([1,2], "1")).toEqual([[1],[2]]);
     expect(chunk([1,2,3,4], 2)).toEqual([[1,2],[3,4]]);
   });
+  it('should return array splited by arrays of size item, decimal size support (Number/String)', () => {
+    expect(chunk([1,2,3,4,5], 2.2)).toEqual([[1,2],[3,4],[5]]);
+    expect(chunk([1,2,3,4,5], 2.5)).toEqual([[1,2],[3,4],[5]]);
+    expect(chunk([1,2,3,4,5], "2.7")).toEqual([[1,2],[3,4],[5]]);
+  });
 });
