@@ -7,8 +7,17 @@
     "test": "jest --watch",
     "test:coverage": "NODE_ENV=test nyc --reporter=lcov --reporter=text jest src"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yao-dev/lodash-like.git"
+  },
   "keywords": [],
   "author": "Michaël Yao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yao-dev/lodash-like/issues"
+  },
+  "homepage": "https://github.com/yao-dev/lodash-like#readme",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.0",
