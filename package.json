@@ -4,14 +4,17 @@
   "description": "Homemade Lodash library",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "test:coverage": "NODE_ENV=test nyc --reporter=lcov --reporter=text jest src/**/**.test.js"
   },
   "keywords": [],
   "author": "Michaël Yao",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.0",
+    "babel-plugin-istanbul": "^4.1.5",
     "babel-preset-env": "^1.6.1",
-    "jest": "^21.2.1"
+    "jest": "^21.2.1",
+    "nyc": "^11.4.1"
   }
 }
