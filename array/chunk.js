@@ -9,23 +9,24 @@ Returns
 (Array): Returns the new array of chunks.
 **/
 export default (array, size = 1) => {
-  const sizeFloor = Math.floor(size);
+  const _size = Math.floor(size);
 
-  if (!array.length || sizeFloor <= 0) return [];
-  if (array.length <= sizeFloor) return array;
-  if (sizeFloor == 1) {
+  if (!array.length || _size <= 0) return [];
+  if (array.length <= _size) return array;
+  if (_size == 1) {
     return array.map(item => [item]);
   }
 
-  const iterationNumber = Math.round(array.length / sizeFloor);
+  const iterationNumber = Math.round(array.length / _size);
+  const _array = typeof array === 'string' ? array.split('') : array;
   let start = 0;
-  let end = sizeFloor;
+  let end = _size;
 
   return Array.from(Array(iterationNumber), () => {
-    const group = array.slice(start, end);
+    const group = _array.slice(start, end);
 
-    start += sizeFloor;
-    end += sizeFloor;
+    start += _size;
+    end += _size;
 
     return group;
   });

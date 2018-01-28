@@ -34,4 +34,9 @@ describe('chunk', () => {
     expect(chunk([1,2,3,4,5], 2.5)).toEqual([[1,2],[3,4],[5]]);
     expect(chunk([1,2,3,4,5], "2.7")).toEqual([[1,2],[3,4],[5]]);
   });
+  it('should return array splited by arrays of size item, string instead array support', () => {
+    expect(chunk("12345", 2.2)).toEqual([["1","2"],["3","4"],["5"]]);
+    expect(chunk("12345", 2.5)).toEqual([["1","2"],["3","4"],["5"]]);
+    expect(chunk("12345", "2.7")).toEqual([["1","2"],["3","4"],["5"]]);
+  });
 });
