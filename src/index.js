@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const toExport = {};
+const moduleToExport = {};
 const dirName = path.basename(__dirname);
 const directories = fs.readdirSync(dirName);
 
@@ -19,13 +19,13 @@ for (const directory of directories) {
 
         if (stats && stats.isFile() && !currentFile.endsWith('.test.js')) {
           const fileBaseName = file.slice(0, -3);
-          const module = require(`./${directory}/${fileBaseName}`);
+          let module = require(`./${directory}/${fileBaseName}`);
 
-          toExport[fileBaseName] = module.default || module;
+          moduleToExport[fileBaseName], exports[`${fileBaseName}`] = module.default || module;
         }
       }
     }
   }
 }
 
-export default toExport;
+export default moduleToExport;
