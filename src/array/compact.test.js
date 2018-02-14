@@ -7,7 +7,10 @@ describe('compact', () => {
   it('should remove false value', () => {
     expect(compact([false])).toEqual([]);
   });
-  it('should remove false value', () => {
+  it('should remove null value', () => {
     expect(compact([null])).toEqual([]);
+  });
+  it('should remove 0 value', () => {
+    expect(compact([0])).toEqual([]);
   });
 });
