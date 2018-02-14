@@ -8,5 +8,5 @@ Returns
 (Array): Returns the new array of filtered values.
 **/
 export default (array) => {
-  return [];
+  return array.filter((value) => ![false].includes(value));
 };
