@@ -13,4 +13,7 @@ describe('compact', () => {
   it('should remove 0 value', () => {
     expect(compact([0])).toEqual([]);
   });
+  it('should remove "" value', () => {
+    expect(compact([""])).toEqual([]);
+  });
 });
