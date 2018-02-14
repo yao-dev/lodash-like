@@ -16,4 +16,13 @@ describe('compact', () => {
   it('should remove "" value', () => {
     expect(compact([""])).toEqual([]);
   });
+  it('should remove undefined value', () => {
+    expect(compact([undefined])).toEqual([]);
+  });
+  it('should remove NaN value', () => {
+    expect(compact([NaN])).toEqual([]);
+  });
+  it('should return array of numbers', () => {
+    expect(compact([0, 1, false, 2, '', 3])).toEqual([1, 2, 3]);
+  })
 });
